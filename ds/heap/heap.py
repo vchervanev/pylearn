@@ -20,7 +20,7 @@ class Heap:
         def lessThanParent(self):
             parent = self.parent()
             return parent is not None and self.value < parent.value
-        
+
         def swapWithParentAndReturn(self):
             parent = self.parent()
             [parent.value, self.value] = [self.value, parent.value]
@@ -35,6 +35,6 @@ class Heap:
 
         def __str__(self):
             return f'<{self.index}: {self.value}>'
-        
+
         def __repr__(self):
             return str(self)

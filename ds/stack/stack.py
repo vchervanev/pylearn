@@ -14,10 +14,11 @@ class Stack:
         self.top = Stack.Item(self.top, value)
 
     def pop(self):
-        if self.isEmpty(): raise Stack.InvalidOperaion
+        if self.isEmpty():
+            raise Stack.InvalidOperaion
         item = self.top
         self.top = item.prev
         return item.value
-    
+
     def isEmpty(self):
         return self.top == None

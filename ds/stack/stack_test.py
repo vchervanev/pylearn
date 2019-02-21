@@ -2,12 +2,15 @@
 from stack import Stack
 from pytest import fixture, raises
 
+
 @fixture
 def stack():
     return Stack()
 
+
 def test_emptyness(stack):
     assert stack.isEmpty() == True
+
 
 def test_push(stack):
     value = 123
@@ -16,9 +19,11 @@ def test_push(stack):
 
     assert result == value
 
+
 def test_empty_pop(stack):
     with raises(Stack.InvalidOperaion):
         stack.pop()
+
 
 def test_sequence(stack):
     sequence = list(range(5))
