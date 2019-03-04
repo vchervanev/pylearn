@@ -1,3 +1,5 @@
+from collections import deque
+
 class BinaryTree:
     class Node:
         def __init__(self, value, left=None, right=None):
@@ -28,3 +30,11 @@ class BinaryTree:
                 nodes[parent].right = nodes[child]
             parent += 1
         return BinaryTree(nodes[0]) if len(nodes) > 0 else BinaryTree()
+
+    def bfs(self):
+        queue = deque([self.root]) if self.root is not None else []
+        while len(queue) != 0:
+            node = queue.popleft()
+            node.left and queue.append(node.left)
+            node.right and queue.append(node.right)
+            yield node.value

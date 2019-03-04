@@ -32,3 +32,16 @@ def test_creation_9_nodes():
                 [6, None, None],
                 [7, None, None]],
         ]
+
+def test_bfs():
+    numbers = list(range(1, 10))
+    tree = BinaryTree.from_list(numbers)
+    result = list(tree.bfs())
+
+    assert result == numbers
+
+def test_bfs_empty_tree():
+    tree = BinaryTree()
+    result = list(tree.bfs())
+
+    assert len(result) == 0
